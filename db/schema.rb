@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180208051724) do
+ActiveRecord::Schema.define(version: 20180918222158) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "name"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20180208051724) do
     t.string "logo"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string "url"
     t.index ["name"], name: "index_organizations_on_name"
   end
 

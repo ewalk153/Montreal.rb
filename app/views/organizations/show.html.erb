@@ -1,5 +1,9 @@
 <h1><%= render_markdown_as_html @organization.name %></h1>
-
-<%= image_tag(@organization.logo.standard.url, class: "logo") if @organization.logo? %>
+<% if @organization.logo?  %>
+  <% img_logo = image_tag(@organization.logo.standard.url, class: "logo") %>
+  <%= link_to img_logo, @organization.url %>
+<% else %>
+  <%= link_to @organization.url, @organization.url %>
+<% end %>
 
 <%=  render_markdown_as_html @organization.description %>
